@@ -1,3 +1,9 @@
-# Tock Project
+# Project Name
 
-This is a start template for Tock 2.0 projects.
+## Drivers
+
+Include here drivers that are specifically designed for your project.
+
+## Applications
+
+Include here the applcations that are part of your project.
