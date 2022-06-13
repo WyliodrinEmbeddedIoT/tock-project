@@ -6,25 +6,11 @@ build = "build.rs"
 edition = "2018"
 
 [dependencies]
-cortexm0p = { path = "../../tock/arch/cortex-m0p" }
-capsules = { path = "../../tock/capsules" }
-kernel = { path = "../../tock/kernel" }
-rp2040 = { path = "../../tock/chips/rp2040" }
-components = { path = "../../tock/boards/components" }
-enum_primitive = { path = "../../tock/libraries/enum_primitive" }
-
+cortexm0p = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "cortexm0p" }
+capsules = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "capsules" }
+kernel = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "kernel" }
+rp2040 = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "rp2040" }
+components = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "components" }
+enum_primitive = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "enum_primitive" }
 
 drivers = { path = "../drivers" }
-
-[profile.dev]
-panic = "abort"
-lto = false
-opt-level = "z"
-debug = true
-
-[profile.release]
-panic = "abort"
-lto = true
-opt-level = "z"
-debug = true
-codegen-units = 1

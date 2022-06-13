@@ -6,25 +6,12 @@ build = "build.rs"
 edition = "2018"
 
 [dependencies]
-cortexm4 = { path = "../../tock/arch/cortex-m4" }
-capsules = { path = "../../tock/capsules" }
-kernel = { path = "../../tock/kernel" }
-nrf52 = { path = "../../tock/chips/nrf52" }
-nrf52833 = { path = "../../tock/chips/nrf52833" }
-components = { path = "../../tock/boards/components" }
-nrf52_components = { path = "../../tock/boards/nordic/nrf52_components" }
+cortexm4 = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "cortexm4" }
+capsules = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "capsules" }
+kernel = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "kernel" }
+nrf52 = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "nrf52" }
+nrf52833 = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "nrf52833" }
+components = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "components" }
+nrf52_components = { git = "https://github.com/tock/tock.git", tag = "release-2.0", package = "nrf52_components" }
 
 drivers = { path = "../drivers" }
-
-[profile.dev]
-panic = "abort"
-lto = false
-opt-level = "z"
-debug = true
-
-[profile.release]
-panic = "abort"
-lto = true
-opt-level = "z"
-debug = true
-codegen-units = 1
